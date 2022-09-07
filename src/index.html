@@ -1,0 +1,122 @@
+<!doctype html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+<link href="/output.css" rel="stylesheet">
+
+
+
+ <!-- <script src="https://cdn.tailwindcss.com"></script> 
+ <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.1.8"></script> -->
+
+
+
+<script>
+$(document).ready(function(){
+
+    $.getJSON("data.json", function(result){
+      $.each(result, function(i, field){
+
+
+        //console.log(field);
+        $("ul").append(
+    '<li class="text-sm leading-6 place-content-stretch  rounded-lg p-6 bg-white border hover:border-gray-200 shadow-md hover:shadow-xl">'+
+      '<figure class="relative flex flex-col-reverse  dark:bg-slate-800 dark:highlight-white/5 ">' +
+          
+           '<div class="mt-6 text-slate-700 dark:text-slate-300 ">'+
+
+           '<p class="text-lg font-tiny text-ellipsis">'+
+                 field.Description +
+            '</p>'+
+
+             '<p class="text-lg font-tiny text-ellipsis">'+
+                 field.Tags +
+            '</p>'+
+          '<blockquote>'+
+           
+             
+
+              '<figcaption class="" ><p class="h-3"></p>'+
+             '<p class="text-lg font-tiny text-ellipsis">'+
+                 field.Products +
+            '</p>'+
+              '</figcaption>' +
+         '</blockquote>'+
+         '</div>' +
+
+        '<figcaption class="flex items-center space-x-4">'+
+          "<img src=" + ((field.Avatar!=='')?field.Avatar:'https://img.icons8.com/cotton/64/000000/user-male-circle.png') +   ' alt="" class="contrast-125 flex-none w-14 h-14 rounded-full object-cover" loading="lazy"></img>'+
+
+
+           '<div class="flex-auto">'+
+           '<div class="text-base text-slate-900 font-semibold dark:text-slate-300">' +
+           '<span class="absolute inset-0"></span>'+
+             field.Name + '</div>' +
+             '<div class="flex-auto">'+
+                 field.Rating +
+            '</div>'+
+            
+             '<div class="mt-0.5">' + field.DateTime + '</div>'+
+            
+
+          '</figcaption>' +
+
+   
+      '</figure>' + 
+     '</li>'
+
+          );
+
+
+        //rating
+        $(".shopee-product-rating__rating").attr('class', 'w-20 h-3 grid grid-cols-5 gap-1');
+        //products
+        $(".L1TFwm img").attr('class', 'flex-none w-10 h-10  relative contrast-125');
+
+
+      });
+    });
+  });
+
+</script>
+
+
+
+</head>
+<body class="font-sans">
+
+<div class="container mx-auto px-4">
+
+  <div class="flex items-center space-x-4">
+   <h1 class="logo w-48 sm:w36" >
+          <a class="flex-none  " href="https://www.blendibox.com.br/" title="Blendibox - Comprar Moda Online" >
+            
+            <img  class="" src="https://cdn.awsli.com.br/400x300/1985/1985921/logo/fe34120478.png" alt="Blendibox - Comprar Moda Online">
+            
+          </a>
+        </h1>
+    <h1 class="flex-auto sm:text-1xl md:text-3xl font-bold text-center  text-clifford  place-items-stretch">
+   Reviews de nosso Clientes na <a href="https://shopee.com.br/buyer/348055095/rating"  text='cilque para visualizar na shopee' class='underline'>Shopee</a>
+  </h1>
+</div>
+
+<div class="mt-5 -mb-3">
+   <List class="space-x-4">
+    <ul class="grid md:grid-cols-4 sm:grid-cols-1  gap-4 h-56 gap-4 ">
+
+    </ul>
+  </List>
+</div>
+
+</div>
+
+
+
+</body>
+
+</html>
