@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import data from './api/data.json'
@@ -19,14 +18,7 @@ import { parse } from 'node-html-parser';
 
  <div className="flex min-h-screen flex-col items-center justify-center py-2">
 
-      <Head>
-        <title>Blendibox - Avaliações na Shopee</title>
-        <meta name="description" content="Blendibox" />
-        <link rel="icon" href="/favicon.ico" />
 
-
-
-      </Head>
 
   <main className="flex w-full flex-1 flex-col items-center  px-20">
 
@@ -120,7 +112,7 @@ import { parse } from 'node-html-parser';
                
            <div className="flex-auto">
               <div className="text-base text-slate-900 font-semibold dark:text-slate-300"> 
-                <span className="absolute inset-0"></span>
+                <div className="absolute inset-0"></div>
                   {review.Name}  
               </div> 
               <div className="flex-auto">
