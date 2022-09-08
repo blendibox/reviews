@@ -1,8 +1,11 @@
-import Image from 'next/image'
+//import Image from 'next/image'
+import Image from '../components/Image.js'
 import styles from '../styles/Home.module.css'
-import data from './api/data.json'
+import data from '../components/data.json'
 import { parse } from 'node-html-parser';
 
+
+export const config = { amp: true }
 
  function  Home(props) {
 
@@ -12,22 +15,25 @@ import { parse } from 'node-html-parser';
    //console.log(data);
 
 
+
+
   return (
 
 
+{data}&&
+ <div name={ia++} key={ia++} className="flex min-h-screen flex-col items-center justify-center py-2">
 
- <div className="flex min-h-screen flex-col items-center justify-center py-2">
 
 
 
-  <main className="flex w-full flex-1 flex-col items-center  px-20">
+<main className="flex w-full flex-1 flex-col items-center  px-20">
 
-<div className="container mx-auto px-4">
+<div name={ia++} key={ia++} className="container mx-auto px-4">
 
-  <div className="flex items-center space-x-4">
+  <div name={ia++} key={ia++} className="flex items-center space-x-4">
    <h1 className="logo w-48 sm:w36" >
-      <a className="flex-none  " href="https://www.blendibox.com.br/" title="Blendibox - Comprar Moda Online" >          
-            <Image width="200" height="45" className="" src="https://cdn.awsli.com.br/400x300/1985/1985921/logo/fe34120478.png" alt="Blendibox - Comprar Moda Online"/>            
+      <a className="flex-none  " href="https://www.blendibox.com.br/" title="Blendibox - Comprar Moda Online"  text="Site Blendibox">          
+            <img width="200" height="45" className="" src="https://cdn.awsli.com.br/400x300/1985/1985921/logo/fe34120478.png" alt="Blendibox - Comprar Moda Online"/>            
       </a>
     </h1>
     <h1 className="flex-auto sm:text-1xl md:text-3xl font-bold text-center  text-clifford  place-items-stretch">
@@ -36,52 +42,54 @@ import { parse } from 'node-html-parser';
 </div>
 
 
-<div className="mt-5 -mb-3">
-   <div className="space-x-4">
+<div name={ia++} key={ia++} className="mt-5 -mb-3" >
+   <div name={ia++} key={ia++} className="space-x-4" >
     <ul className="grid md:grid-cols-4 sm:grid-cols-1  gap-4 h-56 gap-4 ">
 
 
         {data.map((review, id) =>
 
 
-          <li key={id} className="text-sm leading-6 place-content-stretch  rounded-lg p-6 bg-white border hover:border-gray-200 shadow-md hover:shadow-xl">
+          <li name={ia++} key={ia++} className="text-sm leading-6 place-content-stretch  rounded-lg p-6 bg-white border hover:border-gray-200 shadow-md hover:shadow-xl">
 
-            <div className="relative flex flex-col-reverse  dark:bg-slate-800 dark:highlight-white/5 ">           
-              <div className="mt-6 text-slate-700 dark:text-slate-300 ">
+            <div name={ia++} key={ia++} className="relative flex flex-col-reverse  dark:bg-slate-800 dark:highlight-white/5 ">           
+              <div name={ia++} key={ia++} className="mt-6 text-slate-700 dark:text-slate-300 ">
                 <p className="text-lg font-tiny text-ellipsis">
                    {review.Description} 
                 </p>
-                <div key={ia++} className="text-sm font-tiny text-ellipsis" name="TagMap">
+                <div name={ia++} key={ia++} className="text-sm font-tiny text-ellipsis" >
                 {
                       
                    parse(review.Tags, "text/html").childNodes.map((tag, i)=> 
-                         <div key={ia++} > {tag.text} </div>
+                         <div name={ia++} key={ia++} > {tag.text} </div>
                     )
 
                 }
                 </div>
 
-                <div key={ia++} className="text-sm font-tiny text-ellipsis" name="Avaliacao">
+                <div name={ia++} key={ia++} className="text-sm font-tiny text-ellipsis" >
                 {
                       
                    parse(review.Text, "text/html").childNodes.map((av, i)=> 
-                         <div key={ia++} > {av.text} </div>
+                         <div name={ia++} key={ia++}  > {av.text} </div>
                     )
 
                 }
                 </div>
-                <blockquote className="h-48" >
-                  <figcaption key={ia++} className="  flex items-center space-x-4  text-xs font-tiny text-ellipsis"  > 
+                <blockquote name={ia++} className="h-48" >
+                  <figcaption name={ia++} key={ia++}  className="  flex items-center space-x-4  text-xs font-tiny text-ellipsis"  > 
                  
                        
                      {
                        parse(review.Products).childNodes.map((product, i)=>
                        product.rawTagName == 'img' ?   
 
-                        <a href="https://www.blendibox.com.br"> <Image alt="produto" key={ia++} src={product.getAttribute('src')}  width="250" height="250"
-                         className="flex-none w-20 h-20  relative contrast-125"  /> </a>
                       
-                        :  <div key={ia++} className="text-ellipsis overflow-hidden"> {product.text}  </div>                            
+                           <img alt="produto" name={ia++}  key={ia++} src={product.getAttribute('src')}  width="250" height="250"
+                             className="flex-none w-20 h-20  relative contrast-125"  /> 
+                        
+                      
+                        :  <div name={ia++} key={ia++} className="text-ellipsis overflow-hidden"> {product.text}  </div>                            
                     )  
                      }
 
@@ -90,18 +98,18 @@ import { parse } from 'node-html-parser';
                 </blockquote>
              </div> 
 
-            <div className="flex items-center space-x-4">            
+            <div name={ia++} key={ia++} className="flex items-center space-x-4">            
                  
                    {(() => {
 
                     if (review.Avatar == "") {
                         return (
-                           <Image alt="avatar" className="contrast-125 flex-none w-14 h-14 rounded-full object-cover" width="50" height="50"
+                           <img alt="avatar" className="contrast-125 flex-none w-14 h-14 rounded-full object-cover" width="50" height="50"
                             src="https://img.icons8.com/cotton/64/000000/user-male-circle.png" />
                         )
                       } else {
                        return (
-                         <Image alt="avatar" className="contrast-125 flex-none w-14 h-14 rounded-full object-cover" width="50" height="50"
+                         <img alt="avatar" className="contrast-125 flex-none w-14 h-14 rounded-full object-cover" width="50" height="50"
                             src={review.Avatar} />
                          
                         )
@@ -110,13 +118,13 @@ import { parse } from 'node-html-parser';
                     })()}
                 
                
-           <div className="flex-auto">
-              <div className="text-base text-slate-900 font-semibold dark:text-slate-300"> 
-                <div className="absolute inset-0"></div>
+           <div name={ia++} key={ia++} className="flex-auto">
+              <div name={ia++} key={ia++} className="text-base text-slate-900 font-semibold dark:text-slate-300"> 
+                <div name={ia++} key={ia++} className="absolute inset-0"></div>
                   {review.Name}  
               </div> 
-              <div className="flex-auto">
-               <div className="w-20 h-3 grid grid-cols-5 gap-1">
+              <div name={ia++} key={ia++} className="flex-auto">
+               <div name={ia++} key={ia++} className="w-20 h-3 grid grid-cols-5 gap-1">
                 {
                      parse(review.Rating).childNodes.map((tag, i)=>
                            
@@ -130,12 +138,12 @@ import { parse } from 'node-html-parser';
                 
               </div>   
                 </div>        
-              <div className="mt-0.5">  
+              <div name={ia++} key={ia++} className="mt-0.5">  
              
 
               {
                  parse(review.DateTime).childNodes.map((tag, i)=>
-                           <div key="time-{i}"> {tag.text} </div>
+                           <div name={ia++} key={ia++} > {tag.text} </div>
                     )
               }
             
