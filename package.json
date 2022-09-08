@@ -2,7 +2,7 @@
   "name": "review",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://blendibox.github.io/review", 
+  "homepage":"https://blendibox.github.io/reviews/", 
   "scripts": {
     "dev": "next dev",
     "build": "next build",
