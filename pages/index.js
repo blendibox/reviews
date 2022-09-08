@@ -20,7 +20,7 @@ import { parse } from 'node-html-parser';
  <div className="flex min-h-screen flex-col items-center justify-center py-2">
 
       <Head>
-        <title>Create Next App</title>
+        <title>Blendibox - Avaliações na Shopee</title>
         <meta name="description" content="Blendibox" />
         <link rel="icon" href="/favicon.ico" />
 
@@ -86,8 +86,8 @@ import { parse } from 'node-html-parser';
                        parse(review.Products).childNodes.map((product, i)=>
                        product.rawTagName == 'img' ?   
 
-                         <Image alt="produto" key={ia++} src={product.getAttribute('src')}  width="250" height="250"
-                         className="flex-none w-20 h-20  relative contrast-125"  /> 
+                        <a href="https://www.blendibox.com.br"> <Image alt="produto" key={ia++} src={product.getAttribute('src')}  width="250" height="250"
+                         className="flex-none w-20 h-20  relative contrast-125"  /> </a>
                       
                         :  <div key={ia++} className="text-ellipsis overflow-hidden"> {product.text}  </div>                            
                     )  
