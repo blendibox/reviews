@@ -2,7 +2,7 @@
   "name": "review",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://blendibox.github.io/",
+  "homepage":"https://blendibox.github.io/review", 
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,7 +10,7 @@
     "lint": "next lint",
     "eject": "next eject",
     "predeploy": "next build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d pages"
   },
   "dependencies": {
     "next": "12.2.5",

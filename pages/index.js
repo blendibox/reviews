@@ -35,7 +35,7 @@ import { parse } from 'node-html-parser';
   <div className="flex items-center space-x-4">
    <h1 className="logo w-48 sm:w36" >
       <a className="flex-none  " href="https://www.blendibox.com.br/" title="Blendibox - Comprar Moda Online" >          
-            <Image  className="" src="https://cdn.awsli.com.br/400x300/1985/1985921/logo/fe34120478.png" alt="Blendibox - Comprar Moda Online"/>            
+            <Image width="200" height="45" className="" src="https://cdn.awsli.com.br/400x300/1985/1985921/logo/fe34120478.png" alt="Blendibox - Comprar Moda Online"/>            
       </a>
     </h1>
     <h1 className="flex-auto sm:text-1xl md:text-3xl font-bold text-center  text-clifford  place-items-stretch">
@@ -78,17 +78,18 @@ import { parse } from 'node-html-parser';
 
                 }
                 </div>
-                <blockquote className="h-24" >
-                  <figcaption  className="  flex items-center space-x-4  text-xs font-tiny text-ellipsis"  > 
+                <blockquote className="h-48" >
+                  <figcaption key={ia++} className="  flex items-center space-x-4  text-xs font-tiny text-ellipsis"  > 
                  
                        
                      {
                        parse(review.Products).childNodes.map((product, i)=>
                        product.rawTagName == 'img' ?   
 
-                         <Image alt="produto" key={ia++} placement="top" src={product.getAttribute('src')} className="flex-none w-20 h-20  relative contrast-125" data-tip="hello world" /> 
+                         <Image alt="produto" key={ia++} src={product.getAttribute('src')}  width="250" height="250"
+                         className="flex-none w-20 h-20  relative contrast-125"  /> 
                       
-                        :  <div divkey={ia++} className="text-ellipsis overflow-hidden"> {product.text}  </div>                            
+                        :  <div key={ia++} className="text-ellipsis overflow-hidden"> {product.text}  </div>                            
                     )  
                      }
 
@@ -103,12 +104,12 @@ import { parse } from 'node-html-parser';
 
                     if (review.Avatar == "") {
                         return (
-                           <Image alt="avatar" className="contrast-125 flex-none w-14 h-14 rounded-full object-cover" 
+                           <Image alt="avatar" className="contrast-125 flex-none w-14 h-14 rounded-full object-cover" width="50" height="50"
                             src="https://img.icons8.com/cotton/64/000000/user-male-circle.png" />
                         )
                       } else {
                        return (
-                         <Image alt="avatar" className="contrast-125 flex-none w-14 h-14 rounded-full object-cover" 
+                         <Image alt="avatar" className="contrast-125 flex-none w-14 h-14 rounded-full object-cover" width="50" height="50"
                             src={review.Avatar} />
                          
                         )
