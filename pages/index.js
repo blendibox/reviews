@@ -34,8 +34,7 @@ import Moment from "react-moment";
             <img width="200" height="45" className="" src="https://cdn.awsli.com.br/400x300/1985/1985921/logo/fe34120478.png" alt="Blendibox - Comprar Moda Online"/>            
       </a>
     </h1>
-    <h1 className="flex-auto sm:text-1xl md:text-3xl font-bold text-center  text-clifford  place-items-stretch">Depoimentos de nosso Clientes na <a href="https://shopee.com.br/buyer/348055095/rating"  title='cilque para visualizar na shopee' className='underline'>Shopee</a>
-  </h1>
+    <h1 className="flex-auto sm:text-1xl md:text-3xl font-bold text-center  text-clifford  place-items-stretch">Depoimentos de nosso Clientes   </h1>
 </div>
 
 
@@ -168,14 +167,19 @@ import Moment from "react-moment";
 
     </ul>
   </div>
-</div>
+  </div>
 
 </div>
-
+ 
 
       </main>
+      
 
 
+       
+        <a href="https://shopee.com.br/buyer/348055095/rating"  title='cilque para visualizar na shopee' className='underline'></a>
+
+   
     </div>
   )
 }
