@@ -47,7 +47,7 @@ import Moment from "react-moment";
 
         {data.map((review, id) =>
 
-
+        <a key={ia++}  className="place-content-stretch" href="https://www.blendibox.com.br/" title="Blendibox - Comprar Moda Online" >    
           <li key={ia++} className="text-sm leading-6 place-content-stretch  rounded-lg p-6 bg-white border hover:border-gray-200 shadow-md hover:shadow-xl">
 
             <div key={ia++} className="relative flex flex-col-reverse  dark:bg-slate-800 dark:highlight-white/5 ">           
@@ -94,7 +94,7 @@ import Moment from "react-moment";
                              className="flex-none w-20 h-20  relative contrast-125"  /> 
                         
                       
-                        :  <div key={ia++} className="text-ellipsis overflow-hidden"> {product.text}  </div>                            
+                        :  <div key={ia++} className="truncate"> {product.text}  </div>                            
                     )  
                      }
 
@@ -123,12 +123,12 @@ import Moment from "react-moment";
                     })()}
                 
                
-           <div key={ia++} className="flex-auto">
+           <div key={ia++} className="flex-auto truncate" style={{overflow: 'hidden'}}>
               <div key={ia++} className="text-base text-slate-900 font-semibold dark:text-slate-300"> 
                 <div key={ia++} className="absolute inset-0"></div>
                   {review.Name}  
               </div> 
-              <div key={ia++} className="flex-auto">
+              <div key={ia++} className="flex-auto truncate">
                <div key={ia++} className="w-20 h-3 grid grid-cols-5 gap-1">
                 {
                      parse(review.Rating).childNodes.map((tag, i)=>
@@ -162,7 +162,7 @@ import Moment from "react-moment";
           </div> 
 
          </li>
-
+         </a>
 
         )}
 
