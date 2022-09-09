@@ -5,7 +5,8 @@
   "homepage": "https://blendibox.github.io/reviews/",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
+    "build-css": "npx tailwindcss -i ./styles/tailwind.module.css  -o ./styles/output.css --watch",
     "start": "next start",
     "export": "next export",
     "lint": "next lint",
@@ -19,12 +20,15 @@
     "react": "18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "18.2.0",
-    "react-tooltip": "^4.2.21"
+    "react-moment": "^1.1.2"
   },
   "devDependencies": {
-    "eslint": "8.22.0",
-    "eslint-config-next": "12.2.5",
+    "@tailwindcss/typography": "^0.5.7",
+    "autoprefixer": "^10.4.8",
+    "eslint": "8.23.0",
+    "eslint-config-next": "12.3.0",
     "gh-pages": "^3.2.3",
+    "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8"
   }
 }

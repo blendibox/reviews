@@ -1,4 +1,10 @@
+import tailwindcss from '!raw-loader!../styles/tailwind.min.css';
+import outputcss from  '!raw-loader!../styles/output.css';
+
 import { Html, Head, Main, NextScript } from 'next/document'
+
+const cssFile = process.env.NODE_ENV === 'production' ? outputcss : tailwindcss;
+
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -17,7 +23,19 @@ class MyDocument extends Document {
     const initialProps = await Document.getInitialProps(ctx)
 
 
-    return initialProps
+    return {
+      ...initialProps,
+      styles: (
+        <>
+          {initialProps.styles}
+          <style
+            dangerouslySetInnerHTML={{
+              __html: cssFile
+            }}
+          />
+        </>
+      )
+    };
   }
 
   render() {
@@ -26,7 +44,7 @@ class MyDocument extends Document {
        <Head>
         <meta name="description" content="Blendibox" />
         <link rel="icon" href="/favicon.ico" />
-        <link href="./output.css" rel="stylesheet"/>
+        <link href="../styles/tailwind.min.css" rel="stylesheet"/>
       </Head>
         <body>
           <Main />
