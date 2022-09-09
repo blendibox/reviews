@@ -45,7 +45,7 @@ import Moment from "react-moment";
 
         {data.map((review, id) =>
 
-        <a key={ia++}  className="place-content-stretch" href="https://www.blendibox.com.br/" title="Blendibox - Comprar Moda Online" >    
+        <a key={ia++}  className="place-content-stretch" target="_parent" href="https://www.blendibox.com.br/" title="Blendibox - Comprar Moda Online" >    
           <li key={ia++} className="text-sm leading-6 place-content-stretch  rounded-lg p-6 bg-white border hover:border-gray-200 shadow-md hover:shadow-xl">
 
             <div key={ia++} className="relative flex flex-col-reverse  dark:bg-slate-800 dark:highlight-white/5 ">           
