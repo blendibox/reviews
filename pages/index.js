@@ -29,11 +29,7 @@ import Moment from "react-moment";
 <div key={ia++} className="container font-mono mx-auto px-4">
 
   <div key={ia++} className="flex items-center space-x-4">
-   <h1 className="logo w-48 sm:w36" >
-      <a className="flex-none  " href="https://www.blendibox.com.br/" title="Blendibox - Comprar Moda Online" >          
-            <img width="200" height="45" className="" src="https://cdn.awsli.com.br/400x300/1985/1985921/logo/fe34120478.png" alt="Blendibox - Comprar Moda Online"/>            
-      </a>
-    </h1>
+   
     <h1 className="flex-auto sm:text-1xl md:text-3xl font-bold text-center  text-clifford  place-items-stretch">Depoimentos de nossos Clientes   </h1>
 </div>
 
