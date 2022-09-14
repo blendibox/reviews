@@ -104,7 +104,7 @@ import Moment from "react-moment";
                     if (review.Avatar == "") {
                         return (
                            <img alt="avatar" className="contrast-125 flex-none w-14 h-14 rounded-full object-cover" width="50" height="50"
-                            src="https://img.icons8.com/cotton/64/000000/user-male-circle.png" />
+                            src="https://img.icons8.com/pastel-glyph/64/000000/user-female--v3.png" />
                         )
                       } else {
                        return (
